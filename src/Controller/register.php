@@ -1,4 +1,5 @@
 <?php
+$userNameAlreadyExists = false;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     $username = $_POST['username'] ?? null;
@@ -40,7 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         $myStatement->execute();
 
         $resultArray = $myStatement->fetch();
-        echo "nbusername = " . $resultArray['nbusername'] . "<br>";
         
         if ($resultArray['nbusername']> 0){
             $userNameAlreadyExists = true;
@@ -147,7 +147,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 		<?php if (!($usernameSuccess ?? true)){?>
 			<div class="redBox">You have an error in your username !</div>
 		<?php }?>
-		<?php if (!($userNameAlreadyExists ?? true)){?>
+		<?php if ($userNameAlreadyExists){?>
 			<div class="redBox">This username already exists !</div>
 		<?php }?>
 		<div class="userData">
