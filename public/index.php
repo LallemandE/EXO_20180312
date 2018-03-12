@@ -8,7 +8,8 @@ use Service\DBConnector;
 DBConnector::setConfig($configs['db']);
 
 $map = [
-  '' => __ DIR__ . '/../src/Controller/index.php',  
+  '' => __DIR__ . '/../src/Controller/index.php',
+  '/register' => __DIR__ . '/../src/Controller/register.php'  
 ];
 
 $url = $_SERVER['REQUEST_URI'];

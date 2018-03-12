@@ -33,13 +33,31 @@ class DBConnector {
     
     private static function createConnection(){
         $dsn = sprintf('%s:host=%s;dbname=%s',
-            self::$config['driver']),
-            self::$config['hostname'],
+            self::$config['driver'],
+            self::$config['host'],
             self::$config['dbname']);
-            
-            
-            
-       self::$connection = new \PDO($dsn, self::$config['dbuser'], self::$config['dbpass']);     
+    
+       self::$connection = new \PDO($dsn, self::$config['dbuser'], self::$config['dbpass']);   
+    }
+    
+    /**
+     * getConnection
+     *
+     * Get PDO connection and creates it if required.
+     *
+     * @param none
+     *
+     * @return PDO Connection;
+     */
+    
+    
+    public static function getConnection(){
+        
+        if (!self::$connection){
+            self::createConnection();
+        }
+        
+        return self::$connection;
     }
     
 }
