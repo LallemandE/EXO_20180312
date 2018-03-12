@@ -37,7 +37,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         if ($resultArray['nbusername']> 0){
             // Login OK => we can open a session
             
-            session_start();
             $_SESSION['user'] = $username;
             
         } else {
@@ -112,10 +111,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 	<body>
 	<?php 
 	if (isset($_SESSION['user'])){
-	?>
-	<p>User already logged in !</p>
+	
+	    echo '<p>User logged in as "'. $_SESSION['user'] . '" !</p>';
 	    
-	<?php
+	
      } else {
 	
 	?>
