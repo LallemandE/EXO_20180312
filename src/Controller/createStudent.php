@@ -5,4 +5,4 @@ $myStudent = new Student();
 
 $myStudent->getById(20);
 
-echo $myStudent->name;
+echo $myStudent->nameGet();

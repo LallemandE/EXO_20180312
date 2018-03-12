@@ -48,8 +48,8 @@ namespace Model;
 class Student
 {
     private $id;
-    public $name;
-    public $level;
+    protected $name;
+    protected $level;
 
     /**
      * __construct
@@ -76,6 +76,15 @@ class Student
     
  */   
     
+    public nameGet(){
+        return $this->name;
+    }
+    
+    public levelGet(){
+        return $this->level;
+    }
+    
+    
 // si on ne trouve pas le record, il faudrait gÃ©nÃ©rer une exception => on fait try/catch dans le
 // programme appelant.
     
@@ -88,14 +97,43 @@ class Student
         $myResult = $myStatement->fetch();
         var_dump($myResult);
         // il se pourrait que le record n'existe pas !
-        $this->id = $myResult['id'];
-        $this->name = $myResult['name'];
-        $this->level = $myResult['level'];
+        if ($myResult){
+            $this->id = $myResult['id'];
+            $this->name = $myResult['name'];
+            $this->level = $myResult['level'];
+        } else {
+            $this->reset();
+        }
+        return $this;
     }
-/*    
+    
     public function getByName($name){
-        
+        $connection = \Service\DBConnector::getConnection();
+        $mySQL = 'Select * from student where ´name´ = :studentname';
+        $myStatement = $connection->prepare($mySQL);
+        $myStatement->bindParam('studentname', $name);
+        $myStatement->execute();
+        $myResult = $myStatement->fetch();
+        var_dump($myResult);
+        // il se pourrait que le record n'existe pas !
+        if ($myResult){
+            $this->id = $myResult['id'];
+            $this->name = $myResult['name'];
+            $this->level = $myResult['level'];
+        } else {
+            $this->reset();
+        }
+        return $this;
     }
+    
+    private function reset(){
+        $this->id = 0;
+        $this->name = '';
+        $this->level = 0;
+        return $this;
+    }
+    
+    
 */    
     
     
