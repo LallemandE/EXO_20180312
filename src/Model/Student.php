@@ -95,13 +95,13 @@ class Student
         $myStatement->bindParam('id', $id);
         $myStatement->execute();
         $myResult = $myStatement->fetch();
-        var_dump($myResult);
         // il se pourrait que le record n'existe pas !
         if ($myResult){
             $this->id = $myResult['id'];
             $this->name = $myResult['name'];
             $this->level = $myResult['level'];
         } else {
+            // ici, il faudrait générer une exception
             $this->reset();
         }
         return $this;
@@ -109,18 +109,19 @@ class Student
     
     public function getByName($name){
         $connection = \Service\DBConnector::getConnection();
-        $mySQL = 'Select * from student where �name� = :studentname';
+        $mySQL = 'Select * from student where �name� = :studentname';
         $myStatement = $connection->prepare($mySQL);
         $myStatement->bindParam('studentname', $name);
         $myStatement->execute();
         $myResult = $myStatement->fetch();
-        var_dump($myResult);
+  
         // il se pourrait que le record n'existe pas !
         if ($myResult){
             $this->id = $myResult['id'];
             $this->name = $myResult['name'];
             $this->level = $myResult['level'];
         } else {
+            // ici, il faudrait générerer une exception
             $this->reset();
         }
         return $this;
