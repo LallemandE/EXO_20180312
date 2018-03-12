@@ -1,0 +1,19 @@
+{
+    "name": "etudiant/exo_20180312",
+    "description": "Personal Project WF3 20180312",
+    "type": "project",
+    "license": "NONE",
+    "authors": [
+        {
+            "name": "LallemandE",
+            "email": "job@lallemand.lu"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+    	"psr-4": {
+			"": "src/"
+    	}
+    }
+}
