@@ -18,3 +18,6 @@ level integer unsigned not null
 engine INNODB
 charset utf8 collate utf8_bin;
  
+
+
+INSERT INTO `student` (`name`, `level`) VALUES ('Sandrine', '1'), ('Sedat', 2);
