@@ -76,7 +76,8 @@ class Student
     
  */   
     
-    
+// si on ne trouve pas le record, il faudrait générer une exception => on fait try/catch dans le
+// programme appelant.
     
     public function getById($id){
         $connection = \Service\DBConnector::getConnection();
@@ -85,6 +86,7 @@ class Student
         $myStatement->bindParam('id', $id);
         $myStatement->execute();
         $myResult = $myStatement->fetch();
+        var_dump($myResult);
         // il se pourrait que le record n'existe pas !
         $this->id = $myResult['id'];
         $this->name = $myResult['name'];
