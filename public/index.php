@@ -9,7 +9,8 @@ DBConnector::setConfig($configs['db']);
 
 $map = [
   '' => __DIR__ . '/../src/Controller/index.php',
-  '/register' => __DIR__ . '/../src/Controller/register.php'  
+  '/register' => __DIR__ . '/../src/Controller/register.php',
+    '/login' =>   __DIR__ . '/../src/Controller/login.php'
 ];
 
 $url = $_SERVER['REQUEST_URI'];
