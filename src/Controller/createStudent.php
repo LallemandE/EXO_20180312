@@ -22,6 +22,10 @@ $gabriel->getByName('Gabriel')->setLevel(4)->updateDB();
 $myArray = [['Eric', 3], ['Sandrine', 1], ['Sedat', 2], ['Serah', 1], ['Leslie', 1], ['Nathalie', 1],
     ['Frank', 1], ['Alice',1], ['Norbert',1], ['Nadia', 1], ['Sam', 2], ['Arthur', 2], ['Yvan', 3],
     ['Gabriel', 1], ['Daniel', 1], ['Laurent', 1], ['Romain', 2]];
+*/
+$myStudent = new Student();
+$myStudent->deleteAll();
+
 
 $Eric = new Student('Eric', 3);
 $Sandrine = new Student('Sandrine', 1);
@@ -40,7 +44,7 @@ $Gabriel = new Student('Gabriel', 1);
 $Daniel = new Student('Daniel', 1);
 $Laurent = new Student('Laurent', 1);
 $Romain = new Student('Romain', 2);
- */
+
 
 
 $myStudent = new Student();

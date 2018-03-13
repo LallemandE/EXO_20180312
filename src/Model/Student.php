@@ -35,7 +35,6 @@ class Student
             $this->setLevel($level);
             
             if (! $this->doesNameExists($name)){
-                echo ('je sauvegarde '. $name . "<br>");
                 $this->insertDB();
                 return $this;
             }
@@ -300,6 +299,34 @@ class Student
         }
         return $studentArray;
     }
+    
+    
+    /**
+     * getNormal
+     *
+     * Get and array of all registered student with level LEVEL_NORMAL
+     *
+     * @param none
+     *
+     * @return associative array 'name' => ['id' => id , 'level' => level]
+     */
+    
+    
+    public function deleteAll(){
+        $studentArray = [];
+        $connection = \Service\DBConnector::getConnection();
+        $mySQL = 'DELETE from student';
+        $myStatement = $connection->prepare($mySQL);
+        $myStatement->execute();
+        $this->reset();
+        
+        if ($myStatement){
+            return $this;
+        } else {
+            throw new \Exception('Could not empty student table in DB !');
+        }
+    }
+    
     
     
     
