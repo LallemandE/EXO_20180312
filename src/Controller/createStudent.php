@@ -1,3 +1,5 @@
+
+
 <?php
 use Model\Student;
 /*
@@ -23,6 +25,7 @@ $myArray = [['Eric', 3], ['Sandrine', 1], ['Sedat', 2], ['Serah', 1], ['Leslie',
     ['Frank', 1], ['Alice',1], ['Norbert',1], ['Nadia', 1], ['Sam', 2], ['Arthur', 2], ['Yvan', 3],
     ['Gabriel', 1], ['Daniel', 1], ['Laurent', 1], ['Romain', 2]];
 */
+/*
 $myStudent = new Student();
 $myStudent->deleteAll();
 
@@ -44,7 +47,7 @@ $Gabriel = new Student('Gabriel', Student::LEVEL_NORMAL);
 $Daniel = new Student('Daniel', Student::LEVEL_NORMAL);
 $Laurent = new Student('Laurent', Student::LEVEL_NORMAL);
 $Romain = new Student('Romain', Student::LEVEL_GOOD);
-
+*/
 
 
 $myStudent = new Student();
@@ -96,12 +99,6 @@ foreach ($groupArray as $group){
 
 
 
-
-// => on peut imaginer d'avoir un table des "super" élèves, un tableau des "good"
-// et un tableau des normaux =>
-
-// on vide chacun des tableaux aléatoirement l'un après l'autre et on remplit les groupes en utilisant
-// un modulo pour savoir lequel compléter !$_COOKIE
 
 
 

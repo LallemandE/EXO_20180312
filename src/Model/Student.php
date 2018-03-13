@@ -302,13 +302,13 @@ class Student
     
     
     /**
-     * getNormal
+     * deleteAll
      *
-     * Get and array of all registered student with level LEVEL_NORMAL
+     * Deletes all student records in database
      *
      * @param none
      *
-     * @return associative array 'name' => ['id' => id , 'level' => level]
+     * @return $this (resetted).
      */
     
     
@@ -382,6 +382,16 @@ class Student
     
     // on pourrait imaginer de créer une méthode updateDB pour mettre à jour le nom et le level .... A voir !!!!
     
+    /**
+     * insertDB
+     *
+     * Creation of a new student in database.
+     *
+     * @param none
+     *
+     * @return $this
+     */
+
     
     private function insertDB(){
         if ($this->id == 0){            
@@ -406,6 +416,19 @@ class Student
         
     }
     
+    /**
+     * updateDB
+     *
+     * Update of student in Database. It will check that the student already exists or not.
+     * If not, it will create a new student. If yes, it will update the student in DB.
+     *
+     * @param none
+     *
+     * @return $this
+     */
+    
+    
+    
     public function updateDB(){
         if ($this->id <> 0){
             $connection = \Service\DBConnector::getConnection();
@@ -425,7 +448,17 @@ class Student
             $this->insertDB();
         }
     }
+
     
+    /**
+     * delete
+     *
+     * Deletes the current student in database.
+     *
+     * @param none
+     *
+     * @return $this (resetted)
+     */
     
     public function delete(){
         if ($this->id != 0){
