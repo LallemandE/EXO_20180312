@@ -190,6 +190,119 @@ class Student
         }
         return $this;
     }
+    
+    /**
+     * getAll
+     *
+     * Get and array of all registered student
+     *
+     * @param none
+     *
+     * @return associative array 'name' => ['id' => id , 'level' => level]
+     */
+    
+    
+    public function getAll(){
+        $studentArray = [];
+        $connection = \Service\DBConnector::getConnection();
+        $mySQL = 'Select * from student';
+        $myStatement = $connection->prepare($mySQL);
+        $myStatement->execute();
+        
+        $myResultArray = $myStatement->fetchAll();
+
+        foreach ($myResultArray as $myResult){
+            $values = ['id' => $myResult['id'], 'level' => $myResult['level']];
+            $studentArray[$myResult['name']] = ['id' => $myResult['id'], 'level' => $myResult['level']];
+        }
+        
+
+        return $studentArray;
+    }
+    
+    /**
+     * getSuper
+     *
+     * Get and array of all registered student with level LEVEL_SUPER
+     *
+     * @param none
+     *
+     * @return associative array 'name' => ['id' => id , 'level' => level]
+     */
+    
+    
+    public function getSuper(){
+        $studentArray = [];
+        $connection = \Service\DBConnector::getConnection();
+        $mySQL = 'Select * from student where level = ' . self::LEVEL_SUPER;
+        $myStatement = $connection->prepare($mySQL);
+        $myStatement->execute();
+        
+        $myResultArray = $myStatement->fetchAll();
+        
+        foreach ($myResultArray as $myResult){
+            $values = ['id' => $myResult['id'], 'level' => $myResult['level']];
+            $studentArray[$myResult['name']] = ['id' => $myResult['id'], 'level' => $myResult['level']];
+        }
+        return $studentArray;
+    }
+    
+    /**
+     * getGood
+     *
+     * Get and array of all registered student with level LEVEL_GOOD
+     *
+     * @param none
+     *
+     * @return associative array 'name' => ['id' => id , 'level' => level]
+     */
+    
+    
+    public function getGood(){
+        $studentArray = [];
+        $connection = \Service\DBConnector::getConnection();
+        $mySQL = 'Select * from student where level = ' . self::LEVEL_GOOD;
+        $myStatement = $connection->prepare($mySQL);
+        $myStatement->execute();
+        
+        $myResultArray = $myStatement->fetchAll();
+        
+        foreach ($myResultArray as $myResult){
+            $values = ['id' => $myResult['id'], 'level' => $myResult['level']];
+            $studentArray[$myResult['name']] = ['id' => $myResult['id'], 'level' => $myResult['level']];
+        }
+        return $studentArray;
+    }
+ 
+    /**
+     * getNormal
+     *
+     * Get and array of all registered student with level LEVEL_NORMAL
+     *
+     * @param none
+     *
+     * @return associative array 'name' => ['id' => id , 'level' => level]
+     */
+    
+    
+    public function getNormal(){
+        $studentArray = [];
+        $connection = \Service\DBConnector::getConnection();
+        $mySQL = 'Select * from student where level = ' . self::LEVEL_NORMAL;
+        $myStatement = $connection->prepare($mySQL);
+        $myStatement->execute();
+        
+        $myResultArray = $myStatement->fetchAll();
+        
+        foreach ($myResultArray as $myResult){
+            $values = ['id' => $myResult['id'], 'level' => $myResult['level']];
+            $studentArray[$myResult['name']] = ['id' => $myResult['id'], 'level' => $myResult['level']];
+        }
+        return $studentArray;
+    }
+    
+    
+    
 
     /**
      * doesNameExists
