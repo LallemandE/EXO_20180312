@@ -1,15 +1,18 @@
 <?php
 use Model\Student;
-
+/*
 $myStudent = new Student();
 try {
     echo $myStudent->getById(2)->getName() . '<br>';
 } catch (Exception $e){echo $e->getMessage();};
 
 
-$serah = new student('Serah', 1);
+$Leslie = new Student('Leslie', 1);
 
-echo "serah ID = " . $serah->getId();
 
-$gabriel = new student('Gabriel', 2);
+$sam = new Student('Sam', 3);
+*/
+$gabriel = new Student();
+$gabriel->getByName('Gabriel')->setLevel(4)->updateDB();
+
 

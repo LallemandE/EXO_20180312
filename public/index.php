@@ -12,7 +12,7 @@ $map = [
   '/register' => __DIR__ . '/../src/Controller/register.php',
     '/login' =>   __DIR__ . '/../src/Controller/login.php',
     '/logout' => __DIR__ . '/../src/Controller/logout.php',
-    '/createStudent' => __DIR__ . '/../src/Controller/createStudent.php'
+    '/student' => __DIR__ . '/../src/Controller/createStudent.php'
 ];
 
 $url = $_SERVER['REQUEST_URI'];
