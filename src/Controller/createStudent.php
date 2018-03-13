@@ -27,23 +27,23 @@ $myStudent = new Student();
 $myStudent->deleteAll();
 
 
-$Eric = new Student('Eric', 3);
-$Sandrine = new Student('Sandrine', 1);
-$Sedat = new Student('Sedat', 2);
-$Serah = new Student('Serah', 1);
-$Leslie = new Student('Leslie', 1);
-$Nathalie = new Student('Nathalie', 1);
-$Frank = new Student('Frank', 1);
-$Alice = new Student('Alice', 1);
-$Norbert = new Student('Norbert', 1);
-$Nadia = new Student('Nadia', 1);
-$Sam = new Student('Sam', 2);
-$Arthur = new Student('Arthur', 1);
-$Yvan = new Student('Yvan', 3);
-$Gabriel = new Student('Gabriel', 1);
-$Daniel = new Student('Daniel', 1);
-$Laurent = new Student('Laurent', 1);
-$Romain = new Student('Romain', 2);
+$Eric = new Student('Eric', Student::LEVEL_SUPER);
+$Sandrine = new Student('Sandrine', Student::LEVEL_NORMAL);
+$Sedat = new Student('Sedat', Student::LEVEL_GOOD);
+$Serah = new Student('Serah', Student::LEVEL_NORMAL);
+$Leslie = new Student('Leslie', Student::LEVEL_NORMAL);
+$Nathalie = new Student('Nathalie', Student::LEVEL_NORMAL);
+$Frank = new Student('Frank', Student::LEVEL_NORMAL);
+$Alice = new Student('Alice', Student::LEVEL_NORMAL);
+$Norbert = new Student('Norbert', Student::LEVEL_NORMAL);
+$Nadia = new Student('Nadia', Student::LEVEL_NORMAL);
+$Sam = new Student('Sam', Student::LEVEL_GOOD);
+$Arthur = new Student('Arthur', Student::LEVEL_NORMAL);
+$Yvan = new Student('Yvan', Student::LEVEL_SUPER);
+$Gabriel = new Student('Gabriel', Student::LEVEL_NORMAL);
+$Daniel = new Student('Daniel', Student::LEVEL_NORMAL);
+$Laurent = new Student('Laurent', Student::LEVEL_NORMAL);
+$Romain = new Student('Romain', Student::LEVEL_GOOD);
 
 
 
