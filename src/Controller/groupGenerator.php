@@ -5,14 +5,24 @@
     <title>Logout</title>
 </head>
 <body>
+<?php 
+
+$nbGroup = 5;
+if ($_SERVER['REQUEST_METHOD'] === "POST"){
+    $nbGroup =  $_POST['nbGroup'] ?? 5;
+}
+?>
+
+
 
 <h1>Group Generator</h1>
 
 <form method="POST">
 <label for="nbGroup">Nombre de groupes</label>
-<input id="nbGroup" type="number" name="nbGroup" >
+<input id="nbGroup" type="number" name="nbGroup" value="<?php echo $nbGroup; ?>" >
 <button type="submit" name="btnSubmit">GENERATE</button>
 </form>
+
 
 
 
@@ -24,7 +34,6 @@ use Model\Student;
 $myStudent = new Student();
 $myStudentArray = $myStudent->getSuper();
 
-$nbGroup = 5;
 $groupArray = [];
 for ($j = 0; $j < $nbGroup; $j++){
     $groupArray[$j] = [];
@@ -53,13 +62,18 @@ while ( count($myStudentArray) > 0) {
     unset($myStudentArray[$random]);
 }
 
-echo "les $nbGroup groupes <br>";
+echo "<h2>les $nbGroup groupes</h2>";
 
 $i = 1;
 foreach ($groupArray as $group){
-    echo 'Groupe ' . $i . '<BR>';
+    echo '<h3>Groupe ' . $i . '</h3>';
+    $j = 0;
     foreach($group as $stud){
-        echo $stud . " " ; 
+        if ($j != 0){
+            echo ' / ' ;
+        }
+        $j++;
+        echo $stud; 
     }
     echo "<BR>";
     $i++;
