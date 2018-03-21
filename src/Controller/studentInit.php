@@ -44,6 +44,13 @@ if ((! $confirmClick) && (! $cancelClick) ) {
     $myStudent = new Student();
     $myStudent->deleteAll();
     
+    $levelCorrespondance = [
+        Student::LEVEL_NORMAL => "NORMAL",
+        Student::LEVEL_GOOD => "GOOD",
+        Student::LEVEL_SUPER => "VERY GOOD",
+        
+    ];
+    
     
     $Eric = new Student('Eric', Student::LEVEL_SUPER);
     $Sandrine = new Student('Sandrine', Student::LEVEL_NORMAL);
@@ -76,7 +83,7 @@ if ((! $confirmClick) && (! $cancelClick) ) {
             echo '<tr>';
             echo "<td>$studname</td>";
             echo '<td>' . $stud['id'] . '</td>';
-            echo '<td>' . $stud['level'] . '</td>';
+            echo '<td>' . $levelCorrespondance[$stud['level']] . '</td>';
             
             echo '</tr>';
         }

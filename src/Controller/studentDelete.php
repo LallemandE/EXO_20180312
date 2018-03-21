@@ -52,8 +52,7 @@ if ($id && $loggedIn){
             Student::LEVEL_NORMAL => "NORMAL",
             Student::LEVEL_GOOD => "GOOD",
             Student::LEVEL_SUPER => "VERY GOOD",
-            
-        ];
+            ];
         $stud = new Student();
         // Storing data in database
         try {
