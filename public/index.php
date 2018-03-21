@@ -15,6 +15,7 @@ $map = [
     '/student' => __DIR__ . '/../src/Controller/createStudent.php',
     '/studentList' => __DIR__ . '/../src/Controller/studentList.php',
     '/studentInit' => __DIR__ . '/../src/Controller/initStudent.php',
+    '/studentRead' => __DIR__ . '/../src/Controller/studentRead.php',
     '/groupGenerator' => __DIR__ . '/../src/Controller/groupGenerator.php'
 ];
 
