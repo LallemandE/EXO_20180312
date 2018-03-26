@@ -5,6 +5,19 @@ $levelCorrespondance = [
     Student::LEVEL_GOOD => "GOOD",
     Student::LEVEL_SUPER => "VERY GOOD",
 ];
+
+$studentName = null;
+$level = null;
+
+if ($_SERVER['REQUEST_METHOD']== "POST"){
+    $studentName = $_POST['studentName'] ?? null;
+    $level = $_POST['level'] ?? null;
+    $stud = new Student();
+    if ((! $stud->doesNameExists($studentName)) && in_array($level, $levelCorrespondance)){
+
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html>
