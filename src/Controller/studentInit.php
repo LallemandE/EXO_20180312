@@ -47,8 +47,7 @@ if ((! $confirmClick) && (! $cancelClick) ) {
     $levelCorrespondance = [
         Student::LEVEL_NORMAL => "NORMAL",
         Student::LEVEL_GOOD => "GOOD",
-        Student::LEVEL_SUPER => "VERY GOOD",
-        
+        Student::LEVEL_SUPER => "VERY GOOD",       
     ];
     
     
